@@ -1,0 +1,207 @@
+gaston@orangepiplus2e:~/caffe_repo/caffe/project/curvas_y_lineas$ ./validate.sh
+---------- Validation for validate_file.txt ----------
+---------- Validation for project/validate/arcos0.png ---------- Valid
+---------- Validation for project/validate/lineas0.png ---------- Valid
+---------- Validation for project/validate/arcos1.png ---------- Valid
+---------- Validation for project/validate/lineas1.png ---------- Valid
+---------- Validation for project/validate/arcos2.png ---------- Valid
+---------- Validation for project/validate/lineas2.png ---------- Valid
+---------- Validation for project/validate/arcos3.png ---------- Valid
+---------- Validation for project/validate/lineas3.png ---------- Valid
+---------- Validation for project/validate/arcos4.png ---------- Not Valid
+---------- Validation for project/validate/lineas4.png ---------- Valid
+---------- Validation for project/validate/arcos5.png ---------- Valid
+---------- Validation for project/validate/lineas5.png ---------- Valid
+---------- Validation for project/validate/arcos6.png ---------- Valid
+---------- Validation for project/validate/lineas6.png ---------- Valid
+---------- Validation for project/validate/arcos7.png ---------- Valid
+---------- Validation for project/validate/lineas7.png ---------- Valid
+---------- Validation for project/validate/arcos8.png ---------- Valid
+---------- Validation for project/validate/lineas8.png ---------- Valid
+---------- Validation for project/validate/arcos9.png ---------- Valid
+---------- Validation for project/validate/lineas9.png ---------- Valid
+---------- Validation for project/validate/arcos10.png ---------- Not Valid
+---------- Validation for project/validate/lineas10.png ---------- Not Valid
+---------- Validation for project/validate/arcos11.png ---------- Valid
+---------- Validation for project/validate/lineas11.png ---------- Valid
+---------- Validation for project/validate/arcos12.png ---------- Valid
+---------- Validation for project/validate/lineas12.png ---------- Valid
+---------- Validation for project/validate/arcos13.png ---------- Valid
+---------- Validation for project/validate/lineas13.png ---------- Valid
+---------- Validation for project/validate/arcos14.png ---------- Valid
+---------- Validation for project/validate/lineas14.png ---------- Valid
+---------- Validation for project/validate/arcos15.png ---------- Valid
+---------- Validation for project/validate/lineas15.png ---------- Valid
+---------- Validation for project/validate/arcos16.png ---------- Not Valid
+---------- Validation for project/validate/lineas16.png ---------- Valid
+---------- Validation for project/validate/arcos17.png ---------- Valid
+---------- Validation for project/validate/lineas17.png ---------- Valid
+---------- Validation for project/validate/arcos18.png ---------- Valid
+---------- Validation for project/validate/lineas18.png ---------- Valid
+---------- Validation for project/validate/arcos19.png ---------- Not Valid
+---------- Validation for project/validate/lineas19.png ---------- Valid
+---------- Validation for project/validate/arcos20.png ---------- Not Valid
+---------- Validation for project/validate/lineas20.png ---------- Valid
+---------- Validation for project/validate/arcos21.png ---------- Valid
+---------- Validation for project/validate/lineas21.png ---------- Valid
+---------- Validation for project/validate/arcos22.png ---------- Valid
+---------- Validation for project/validate/lineas22.png ---------- Valid
+---------- Validation for project/validate/arcos23.png ---------- Valid
+---------- Validation for project/validate/lineas23.png ---------- Valid
+---------- Validation for project/validate/arcos24.png ---------- Valid
+---------- Validation for project/validate/lineas24.png ---------- Valid
+---------- Validation for project/validate/arcos25.png ---------- Not Valid
+---------- Validation for project/validate/lineas25.png ---------- Valid
+---------- Validation for project/validate/arcos26.png ---------- Valid
+---------- Validation for project/validate/lineas26.png ---------- Valid
+---------- Validation for project/validate/arcos27.png ---------- Valid
+---------- Validation for project/validate/lineas27.png ---------- Valid
+---------- Validation for project/validate/arcos28.png ---------- Valid
+---------- Validation for project/validate/lineas28.png ---------- Valid
+---------- Validation for project/validate/arcos29.png ---------- Valid
+---------- Validation for project/validate/lineas29.png ---------- Valid
+---------- Validation for project/validate/arcos30.png ---------- Valid
+---------- Validation for project/validate/lineas30.png ---------- Valid
+---------- Validation for project/validate/arcos31.png ---------- Valid
+---------- Validation for project/validate/lineas31.png ---------- Valid
+---------- Validation for project/validate/arcos32.png ---------- Valid
+---------- Validation for project/validate/lineas32.png ---------- Valid
+---------- Validation for project/validate/arcos33.png ---------- Valid
+---------- Validation for project/validate/lineas33.png ---------- Valid
+---------- Validation for project/validate/arcos34.png ---------- Valid
+---------- Validation for project/validate/lineas34.png ---------- Valid
+---------- Validation for project/validate/arcos35.png ---------- Valid
+---------- Validation for project/validate/lineas35.png ---------- Valid
+---------- Validation for project/validate/arcos36.png ---------- Valid
+---------- Validation for project/validate/lineas36.png ---------- Valid
+---------- Validation for project/validate/arcos37.png ---------- Not Valid
+---------- Validation for project/validate/lineas37.png ---------- Valid
+---------- Validation for project/validate/arcos38.png ---------- Valid
+---------- Validation for project/validate/lineas38.png ---------- Valid
+---------- Validation for project/validate/arcos39.png ---------- Valid
+---------- Validation for project/validate/lineas39.png ---------- Valid
+---------- Validation for project/validate/arcos40.png ---------- Not Valid
+---------- Validation for project/validate/lineas40.png ---------- Valid
+---------- Validation for project/validate/arcos41.png ---------- Not Valid
+---------- Validation for project/validate/lineas41.png ---------- Valid
+---------- Validation for project/validate/arcos42.png ---------- Valid
+---------- Validation for project/validate/lineas42.png ---------- Valid
+---------- Validation for project/validate/arcos43.png ---------- Valid
+---------- Validation for project/validate/lineas43.png ---------- Valid
+---------- Validation for project/validate/arcos44.png ---------- Valid
+---------- Validation for project/validate/lineas44.png ---------- Valid
+---------- Validation for project/validate/arcos45.png ---------- Valid
+---------- Validation for project/validate/lineas45.png ---------- Valid
+---------- Validation for project/validate/arcos46.png ---------- Not Valid
+---------- Validation for project/validate/lineas46.png ---------- Valid
+---------- Validation for project/validate/arcos47.png ---------- Valid
+---------- Validation for project/validate/lineas47.png ---------- Valid
+---------- Validation for project/validate/arcos48.png ---------- Valid
+---------- Validation for project/validate/lineas48.png ---------- Valid
+---------- Validation for project/validate/arcos49.png ---------- Valid
+---------- Validation for project/validate/lineas49.png ---------- Valid
+---------- Validation for project/validate/arcos50.png ---------- Not Valid
+---------- Validation for project/validate/lineas50.png ---------- Valid
+---------- Validation for project/validate/arcos51.png ---------- Valid
+---------- Validation for project/validate/lineas51.png ---------- Valid
+---------- Validation for project/validate/arcos52.png ---------- Valid
+---------- Validation for project/validate/lineas52.png ---------- Valid
+---------- Validation for project/validate/arcos53.png ---------- Valid
+---------- Validation for project/validate/lineas53.png ---------- Valid
+---------- Validation for project/validate/arcos54.png ---------- Valid
+---------- Validation for project/validate/lineas54.png ---------- Valid
+---------- Validation for project/validate/arcos55.png ---------- Valid
+---------- Validation for project/validate/lineas55.png ---------- Valid
+---------- Validation for project/validate/arcos56.png ---------- Valid
+---------- Validation for project/validate/lineas56.png ---------- Valid
+---------- Validation for project/validate/arcos57.png ---------- Valid
+---------- Validation for project/validate/lineas57.png ---------- Valid
+---------- Validation for project/validate/arcos58.png ---------- Valid
+---------- Validation for project/validate/lineas58.png ---------- Valid
+---------- Validation for project/validate/arcos59.png ---------- Valid
+---------- Validation for project/validate/lineas59.png ---------- Valid
+---------- Validation for project/validate/arcos60.png ---------- Not Valid
+---------- Validation for project/validate/lineas60.png ---------- Valid
+---------- Validation for project/validate/arcos61.png ---------- Not Valid
+---------- Validation for project/validate/lineas61.png ---------- Valid
+---------- Validation for project/validate/arcos62.png ---------- Valid
+---------- Validation for project/validate/lineas62.png ---------- Valid
+---------- Validation for project/validate/arcos63.png ---------- Valid
+---------- Validation for project/validate/lineas63.png ---------- Valid
+---------- Validation for project/validate/arcos64.png ---------- Valid
+---------- Validation for project/validate/lineas64.png ---------- Valid
+---------- Validation for project/validate/arcos65.png ---------- Valid
+---------- Validation for project/validate/lineas65.png ---------- Valid
+---------- Validation for project/validate/arcos66.png ---------- Valid
+---------- Validation for project/validate/lineas66.png ---------- Valid
+---------- Validation for project/validate/arcos67.png ---------- Not Valid
+---------- Validation for project/validate/lineas67.png ---------- Valid
+---------- Validation for project/validate/arcos68.png ---------- Valid
+---------- Validation for project/validate/lineas68.png ---------- Valid
+---------- Validation for project/validate/arcos69.png ---------- Valid
+---------- Validation for project/validate/lineas69.png ---------- Valid
+---------- Validation for project/validate/arcos70.png ---------- Not Valid
+---------- Validation for project/validate/lineas70.png ---------- Valid
+---------- Validation for project/validate/arcos71.png ---------- Not Valid
+---------- Validation for project/validate/lineas71.png ---------- Valid
+---------- Validation for project/validate/arcos72.png ---------- Valid
+---------- Validation for project/validate/lineas72.png ---------- Not Valid
+---------- Validation for project/validate/arcos73.png ---------- Valid
+---------- Validation for project/validate/lineas73.png ---------- Valid
+---------- Validation for project/validate/arcos74.png ---------- Valid
+---------- Validation for project/validate/lineas74.png ---------- Valid
+---------- Validation for project/validate/arcos75.png ---------- Valid
+---------- Validation for project/validate/lineas75.png ---------- Valid
+---------- Validation for project/validate/arcos76.png ---------- Not Valid
+---------- Validation for project/validate/lineas76.png ---------- Valid
+---------- Validation for project/validate/arcos77.png ---------- Not Valid
+---------- Validation for project/validate/lineas77.png ---------- Valid
+---------- Validation for project/validate/arcos78.png ---------- Valid
+---------- Validation for project/validate/lineas78.png ---------- Valid
+---------- Validation for project/validate/arcos79.png ---------- Valid
+---------- Validation for project/validate/lineas79.png ---------- Not Valid
+---------- Validation for project/validate/arcos80.png ---------- Valid
+---------- Validation for project/validate/lineas80.png ---------- Valid
+---------- Validation for project/validate/arcos81.png ---------- Valid
+---------- Validation for project/validate/lineas81.png ---------- Valid
+---------- Validation for project/validate/arcos82.png ---------- Valid
+---------- Validation for project/validate/lineas82.png ---------- Valid
+---------- Validation for project/validate/arcos83.png ---------- Valid
+---------- Validation for project/validate/lineas83.png ---------- Valid
+---------- Validation for project/validate/arcos84.png ---------- Valid
+---------- Validation for project/validate/lineas84.png ---------- Valid
+---------- Validation for project/validate/arcos85.png ---------- Valid
+---------- Validation for project/validate/lineas85.png ---------- Valid
+---------- Validation for project/validate/arcos86.png ---------- Valid
+---------- Validation for project/validate/lineas86.png ---------- Valid
+---------- Validation for project/validate/arcos87.png ---------- Valid
+---------- Validation for project/validate/lineas87.png ---------- Valid
+---------- Validation for project/validate/arcos88.png ---------- Not Valid
+---------- Validation for project/validate/lineas88.png ---------- Valid
+---------- Validation for project/validate/arcos89.png ---------- Not Valid
+---------- Validation for project/validate/lineas89.png ---------- Valid
+---------- Validation for project/validate/arcos90.png ---------- Valid
+---------- Validation for project/validate/lineas90.png ---------- Valid
+---------- Validation for project/validate/arcos91.png ---------- Valid
+---------- Validation for project/validate/lineas91.png ---------- Valid
+---------- Validation for project/validate/arcos92.png ---------- Not Valid
+---------- Validation for project/validate/lineas92.png ---------- Not Valid
+---------- Validation for project/validate/arcos93.png ---------- Valid
+---------- Validation for project/validate/lineas93.png ---------- Valid
+---------- Validation for project/validate/arcos94.png ---------- Valid
+---------- Validation for project/validate/lineas94.png ---------- Valid
+---------- Validation for project/validate/arcos95.png ---------- Not Valid
+---------- Validation for project/validate/lineas95.png ---------- Valid
+---------- Validation for project/validate/arcos96.png ---------- Not Valid
+---------- Validation for project/validate/lineas96.png ---------- Valid
+---------- Validation for project/validate/arcos97.png ---------- Valid
+---------- Validation for project/validate/lineas97.png ---------- Valid
+---------- Validation for project/validate/arcos98.png ---------- Not Valid
+---------- Validation for project/validate/lineas98.png ---------- Valid
+---------- Validation for project/validate/arcos99.png ---------- Not Valid
+---------- Validation for project/validate/lineas99.png ---------- Valid
+---------- Total:  200 ---------- Valids:  171---------- Acuracy: 85.50
+---------- Elapsed total time:  177.0331 seconds
+---------- Average process time: 885.1650 miliseconds
+---------- Average clasification time: 879.3250 miliseconds
+
