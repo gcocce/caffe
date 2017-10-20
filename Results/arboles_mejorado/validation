@@ -1,0 +1,207 @@
+gaston@ML-Ubuntu-VB:~/caffe_repo/caffe/project/arboles_mejorado$ ./validate.sh 
+---------- Validation for validate_file.txt ----------
+---------- Validation for project/validate/arbol0.png ---------- Valid 
+---------- Validation for project/validate/basura1.png ---------- Valid 
+---------- Validation for project/validate/basura2.png ---------- Valid 
+---------- Validation for project/validate/basura3.png ---------- Not Valid
+---------- Validation for project/validate/basura4.png ---------- Valid 
+---------- Validation for project/validate/basura5.png ---------- Not Valid
+---------- Validation for project/validate/basura6.png ---------- Valid 
+---------- Validation for project/validate/basura7.png ---------- Valid 
+---------- Validation for project/validate/arbol8.png ---------- Valid 
+---------- Validation for project/validate/arbol9.png ---------- Valid 
+---------- Validation for project/validate/arbol10.png ---------- Not Valid
+---------- Validation for project/validate/arbol11.png ---------- Valid 
+---------- Validation for project/validate/basura12.png ---------- Not Valid
+---------- Validation for project/validate/basura13.png ---------- Valid 
+---------- Validation for project/validate/basura14.png ---------- Valid 
+---------- Validation for project/validate/basura15.png ---------- Not Valid
+---------- Validation for project/validate/arbol16.png ---------- Valid 
+---------- Validation for project/validate/basura17.png ---------- Valid 
+---------- Validation for project/validate/basura18.png ---------- Not Valid
+---------- Validation for project/validate/basura19.png ---------- Valid 
+---------- Validation for project/validate/basura20.png ---------- Valid 
+---------- Validation for project/validate/basura21.png ---------- Valid 
+---------- Validation for project/validate/arbol22.png ---------- Valid 
+---------- Validation for project/validate/arbol23.png ---------- Not Valid
+---------- Validation for project/validate/basura24.png ---------- Valid 
+---------- Validation for project/validate/basura25.png ---------- Not Valid
+---------- Validation for project/validate/basura26.png ---------- Valid 
+---------- Validation for project/validate/arbol27.png ---------- Valid 
+---------- Validation for project/validate/arbol28.png ---------- Valid 
+---------- Validation for project/validate/basura29.png ---------- Valid 
+---------- Validation for project/validate/arbol30.png ---------- Valid 
+---------- Validation for project/validate/basura31.png ---------- Valid 
+---------- Validation for project/validate/basura32.png ---------- Valid 
+---------- Validation for project/validate/arbol33.png ---------- Valid 
+---------- Validation for project/validate/arbol34.png ---------- Valid 
+---------- Validation for project/validate/arbol35.png ---------- Valid 
+---------- Validation for project/validate/basura36.png ---------- Valid 
+---------- Validation for project/validate/basura37.png ---------- Valid 
+---------- Validation for project/validate/basura38.png ---------- Valid 
+---------- Validation for project/validate/arbol39.png ---------- Valid 
+---------- Validation for project/validate/basura40.png ---------- Valid 
+---------- Validation for project/validate/basura41.png ---------- Valid 
+---------- Validation for project/validate/basura42.png ---------- Valid 
+---------- Validation for project/validate/basura43.png ---------- Valid 
+---------- Validation for project/validate/arbol44.png ---------- Valid 
+---------- Validation for project/validate/arbol45.png ---------- Valid 
+---------- Validation for project/validate/basura46.png ---------- Not Valid
+---------- Validation for project/validate/basura47.png ---------- Valid 
+---------- Validation for project/validate/basura48.png ---------- Valid 
+---------- Validation for project/validate/arbol49.png ---------- Not Valid
+---------- Validation for project/validate/arbol50.png ---------- Valid 
+---------- Validation for project/validate/basura51.png ---------- Valid 
+---------- Validation for project/validate/basura52.png ---------- Not Valid
+---------- Validation for project/validate/basura53.png ---------- Valid 
+---------- Validation for project/validate/basura54.png ---------- Valid 
+---------- Validation for project/validate/arbol55.png ---------- Valid 
+---------- Validation for project/validate/basura56.png ---------- Valid 
+---------- Validation for project/validate/arbol57.png ---------- Not Valid
+---------- Validation for project/validate/arbol58.png ---------- Valid 
+---------- Validation for project/validate/basura59.png ---------- Not Valid
+---------- Validation for project/validate/basura60.png ---------- Valid 
+---------- Validation for project/validate/basura61.png ---------- Valid 
+---------- Validation for project/validate/arbol62.png ---------- Not Valid
+---------- Validation for project/validate/basura63.png ---------- Valid 
+---------- Validation for project/validate/arbol64.png ---------- Valid 
+---------- Validation for project/validate/arbol65.png ---------- Valid 
+---------- Validation for project/validate/arbol66.png ---------- Valid 
+---------- Validation for project/validate/basura67.png ---------- Valid 
+---------- Validation for project/validate/arbol68.png ---------- Valid 
+---------- Validation for project/validate/basura69.png ---------- Valid 
+---------- Validation for project/validate/basura70.png ---------- Valid 
+---------- Validation for project/validate/basura71.png ---------- Valid 
+---------- Validation for project/validate/basura72.png ---------- Valid 
+---------- Validation for project/validate/basura73.png ---------- Valid 
+---------- Validation for project/validate/arbol74.png ---------- Valid 
+---------- Validation for project/validate/arbol75.png ---------- Valid 
+---------- Validation for project/validate/basura76.png ---------- Valid 
+---------- Validation for project/validate/basura77.png ---------- Not Valid
+---------- Validation for project/validate/basura78.png ---------- Valid 
+---------- Validation for project/validate/basura79.png ---------- Valid 
+---------- Validation for project/validate/basura80.png ---------- Valid 
+---------- Validation for project/validate/arbol81.png ---------- Valid 
+---------- Validation for project/validate/basura82.png ---------- Valid 
+---------- Validation for project/validate/basura83.png ---------- Valid 
+---------- Validation for project/validate/basura84.png ---------- Valid 
+---------- Validation for project/validate/arbol85.png ---------- Valid 
+---------- Validation for project/validate/basura86.png ---------- Valid 
+---------- Validation for project/validate/basura87.png ---------- Valid 
+---------- Validation for project/validate/arbol88.png ---------- Valid 
+---------- Validation for project/validate/arbol89.png ---------- Valid 
+---------- Validation for project/validate/arbol90.png ---------- Valid 
+---------- Validation for project/validate/basura91.png ---------- Valid 
+---------- Validation for project/validate/basura92.png ---------- Not Valid
+---------- Validation for project/validate/basura93.png ---------- Valid 
+---------- Validation for project/validate/arbol94.png ---------- Not Valid
+---------- Validation for project/validate/basura95.png ---------- Valid 
+---------- Validation for project/validate/arbol96.png ---------- Valid 
+---------- Validation for project/validate/arbol97.png ---------- Valid 
+---------- Validation for project/validate/arbol98.png ---------- Valid 
+---------- Validation for project/validate/arbol99.png ---------- Not Valid
+---------- Validation for project/validate/basura100.png ---------- Valid 
+---------- Validation for project/validate/arbol101.png ---------- Valid 
+---------- Validation for project/validate/arbol102.png ---------- Valid 
+---------- Validation for project/validate/arbol103.png ---------- Valid 
+---------- Validation for project/validate/arbol104.png ---------- Valid 
+---------- Validation for project/validate/arbol105.png ---------- Valid 
+---------- Validation for project/validate/arbol106.png ---------- Valid 
+---------- Validation for project/validate/basura107.png ---------- Not Valid
+---------- Validation for project/validate/arbol108.png ---------- Valid 
+---------- Validation for project/validate/arbol109.png ---------- Valid 
+---------- Validation for project/validate/arbol110.png ---------- Valid 
+---------- Validation for project/validate/basura111.png ---------- Valid 
+---------- Validation for project/validate/arbol112.png ---------- Valid 
+---------- Validation for project/validate/arbol113.png ---------- Valid 
+---------- Validation for project/validate/basura114.png ---------- Valid 
+---------- Validation for project/validate/basura115.png ---------- Valid 
+---------- Validation for project/validate/basura116.png ---------- Valid 
+---------- Validation for project/validate/basura117.png ---------- Valid 
+---------- Validation for project/validate/basura118.png ---------- Valid 
+---------- Validation for project/validate/basura119.png ---------- Not Valid
+---------- Validation for project/validate/basura120.png ---------- Valid 
+---------- Validation for project/validate/basura121.png ---------- Not Valid
+---------- Validation for project/validate/basura122.png ---------- Valid 
+---------- Validation for project/validate/arbol123.png ---------- Valid 
+---------- Validation for project/validate/arbol124.png ---------- Valid 
+---------- Validation for project/validate/arbol125.png ---------- Valid 
+---------- Validation for project/validate/basura126.png ---------- Valid 
+---------- Validation for project/validate/basura127.png ---------- Valid 
+---------- Validation for project/validate/arbol128.png ---------- Valid 
+---------- Validation for project/validate/basura129.png ---------- Valid 
+---------- Validation for project/validate/basura130.png ---------- Valid 
+---------- Validation for project/validate/basura131.png ---------- Valid 
+---------- Validation for project/validate/basura132.png ---------- Not Valid
+---------- Validation for project/validate/arbol133.png ---------- Valid 
+---------- Validation for project/validate/arbol134.png ---------- Valid 
+---------- Validation for project/validate/arbol135.png ---------- Valid 
+---------- Validation for project/validate/basura136.png ---------- Not Valid
+---------- Validation for project/validate/basura137.png ---------- Valid 
+---------- Validation for project/validate/arbol138.png ---------- Valid 
+---------- Validation for project/validate/basura139.png ---------- Valid 
+---------- Validation for project/validate/arbol140.png ---------- Valid 
+---------- Validation for project/validate/basura141.png ---------- Valid 
+---------- Validation for project/validate/arbol142.png ---------- Valid 
+---------- Validation for project/validate/basura143.png ---------- Valid 
+---------- Validation for project/validate/arbol144.png ---------- Valid 
+---------- Validation for project/validate/arbol145.png ---------- Valid 
+---------- Validation for project/validate/arbol146.png ---------- Valid 
+---------- Validation for project/validate/arbol147.png ---------- Valid 
+---------- Validation for project/validate/arbol148.png ---------- Valid 
+---------- Validation for project/validate/arbol149.png ---------- Valid 
+---------- Validation for project/validate/basura150.png ---------- Not Valid
+---------- Validation for project/validate/arbol151.png ---------- Not Valid
+---------- Validation for project/validate/arbol152.png ---------- Valid 
+---------- Validation for project/validate/arbol153.png ---------- Valid 
+---------- Validation for project/validate/basura154.png ---------- Not Valid
+---------- Validation for project/validate/arbol155.png ---------- Valid 
+---------- Validation for project/validate/arbol156.png ---------- Valid 
+---------- Validation for project/validate/arbol157.png ---------- Valid 
+---------- Validation for project/validate/basura158.png ---------- Valid 
+---------- Validation for project/validate/basura159.png ---------- Valid 
+---------- Validation for project/validate/basura160.png ---------- Not Valid
+---------- Validation for project/validate/arbol161.png ---------- Valid 
+---------- Validation for project/validate/arbol162.png ---------- Valid 
+---------- Validation for project/validate/basura163.png ---------- Not Valid
+---------- Validation for project/validate/arbol164.png ---------- Valid 
+---------- Validation for project/validate/arbol165.png ---------- Valid 
+---------- Validation for project/validate/arbol166.png ---------- Valid 
+---------- Validation for project/validate/arbol167.png ---------- Valid 
+---------- Validation for project/validate/basura168.png ---------- Valid 
+---------- Validation for project/validate/basura169.png ---------- Valid 
+---------- Validation for project/validate/arbol170.png ---------- Valid 
+---------- Validation for project/validate/arbol171.png ---------- Valid 
+---------- Validation for project/validate/basura172.png ---------- Valid 
+---------- Validation for project/validate/arbol173.png ---------- Valid 
+---------- Validation for project/validate/basura174.png ---------- Valid 
+---------- Validation for project/validate/basura175.png ---------- Valid 
+---------- Validation for project/validate/basura176.png ---------- Valid 
+---------- Validation for project/validate/basura177.png ---------- Not Valid
+---------- Validation for project/validate/arbol178.png ---------- Valid 
+---------- Validation for project/validate/basura179.png ---------- Valid 
+---------- Validation for project/validate/arbol180.png ---------- Valid 
+---------- Validation for project/validate/arbol181.png ---------- Valid 
+---------- Validation for project/validate/basura182.png ---------- Valid 
+---------- Validation for project/validate/arbol183.png ---------- Valid 
+---------- Validation for project/validate/arbol184.png ---------- Not Valid
+---------- Validation for project/validate/basura185.png ---------- Valid 
+---------- Validation for project/validate/arbol186.png ---------- Valid 
+---------- Validation for project/validate/basura187.png ---------- Valid 
+---------- Validation for project/validate/arbol188.png ---------- Not Valid
+---------- Validation for project/validate/arbol189.png ---------- Valid 
+---------- Validation for project/validate/basura190.png ---------- Valid 
+---------- Validation for project/validate/arbol191.png ---------- Valid 
+---------- Validation for project/validate/basura192.png ---------- Not Valid
+---------- Validation for project/validate/basura193.png ---------- Valid 
+---------- Validation for project/validate/basura194.png ---------- Valid 
+---------- Validation for project/validate/basura195.png ---------- Valid 
+---------- Validation for project/validate/basura196.png ---------- Valid 
+---------- Validation for project/validate/basura197.png ---------- Valid 
+---------- Validation for project/validate/basura198.png ---------- Valid 
+---------- Validation for project/validate/arbol199.png ---------- Valid 
+---------- Total:  200 ---------- Valids:  168---------- Acuracy: 84.00
+---------- Elapsed total time:  1.8891 seconds 
+---------- Average process time: 9.4450 miliseconds 
+---------- Average clasification time: 7.4500 miliseconds 
+
