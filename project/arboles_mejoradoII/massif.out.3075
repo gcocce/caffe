@@ -1,0 +1,1137 @@
+desc: (none)
+cmd: ../../build/project/tool/classification.bin deploy.prototxt train_iter_500.caffemodel mean.binaryproto labels.txt validate_file.txt
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=23749021
+mem_heap_B=72704
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=40820559
+mem_heap_B=3935087
+mem_heap_extra_B=127617
+mem_stacks_B=0
+heap_tree=detailed
+n8: 3935087 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 2220548 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n3: 2220020 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 89196 0x5038552: caffe::BaseConvolutionLayer<float>::Reshape(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 89196 0x511BA87: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 89196 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 89196 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n0: 89196 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 16 in 2 places, all below massif's threshold (1.00%)
+  n0: 528 in 3 places, all below massif's threshold (1.00%)
+ n1: 524848 0x4F874D3: google::protobuf::RepeatedField<float>::Reserve(int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n1: 524848 0x4F8851E: google::protobuf::RepeatedField<float>::Resize(int, float const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 524848 0x4F7526A: caffe::BlobProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 524848 0x4F88615: bool google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual<caffe::BlobProto>(google::protobuf::io::CodedInputStream*, caffe::BlobProto*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524848 0x4F75755: caffe::LayerParameter::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524848 0x4F7C15F: caffe::NetParameter::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524848 0x8DF1F9E: google::protobuf::MessageLite::ParseFromCodedStream(google::protobuf::io::CodedInputStream*) (message_lite.cc:119)
+        n1: 524848 0x50B3DF2: caffe::ReadProtoFromBinaryFile(char const*, google::protobuf::Message*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+         n1: 524848 0x50BF884: caffe::ReadNetParamsFromBinaryFileOrDie(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::NetParameter*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+          n1: 524848 0x5118FB8: caffe::Net<float>::CopyTrainedLayersFromBinaryProto(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+           n1: 524848 0x51190A5: caffe::Net<float>::CopyTrainedLayersFrom(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+            n1: 524848 0x409659: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+             n0: 524848 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+ n2: 408139 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n2: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 351316 in 63 places, all below massif's threshold (1.00%)
+    n1: 54536 0x665C713: _GLOBAL__sub_I_opencl_kernels_imgproc.cpp (in /usr/local/lib/libopencv_imgproc.so.3.2.0)
+     n1: 54536 0x40106B8: call_init.part.0 (dl-init.c:72)
+      n1: 54536 0x40107C9: _dl_init (dl-init.c:30)
+       n1: 54536 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+        n1: 54536 0x4: ???
+         n1: 54536 0xFFF000031: ???
+          n1: 54536 0xFFF00005D: ???
+           n1: 54536 0xFFF00006D: ???
+            n1: 54536 0xFFF000087: ???
+             n1: 54536 0xFFF000098: ???
+              n0: 54536 0xFFF0000A3: ???
+   n0: 1264 in 24 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 358840 in 276 places, all below massif's threshold (1.00%)
+ n2: 197872 0x94327AC: ??? (in /usr/lib/x86_64-linux-gnu/libhdf5_serial.so.10.1.0)
+  n2: 191784 0x94328F3: H5FL_reg_malloc (in /usr/lib/x86_64-linux-gnu/libhdf5_serial.so.10.1.0)
+   n0: 108168 in 9 places, all below massif's threshold (1.00%)
+   n1: 83616 0x95071AA: H5T_copy (in /usr/lib/x86_64-linux-gnu/libhdf5_serial.so.10.1.0)
+    n0: 83616 in 50 places, all below massif's threshold (1.00%)
+  n0: 6088 in 1 place, below massif's threshold (1.00%)
+ n2: 86088 0x8DFF48D: google::protobuf::DescriptorPool::Tables::AllocateBytes(int) (descriptor.cc:1159)
+  n1: 69888 0x8E12A29: google::protobuf::DescriptorBuilder::BuildMessage(google::protobuf::DescriptorProto const&, google::protobuf::Descriptor const*, google::protobuf::Descriptor*) (descriptor.cc:1124)
+   n1: 69888 0x8E15D34: google::protobuf::DescriptorBuilder::BuildFileImpl(google::protobuf::FileDescriptorProto const&) (descriptor.cc:4267)
+    n1: 69888 0x8E16C37: google::protobuf::DescriptorBuilder::BuildFile(google::protobuf::FileDescriptorProto const&) (descriptor.cc:4083)
+     n1: 69888 0x8E16FA7: google::protobuf::DescriptorPool::BuildFileFromDatabase(google::protobuf::FileDescriptorProto const&) const (descriptor.cc:3421)
+      n1: 69888 0x8E17119: google::protobuf::DescriptorPool::TryFindFileInFallbackDatabase(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (descriptor.cc:1732)
+       n1: 69888 0x8E1720A: google::protobuf::DescriptorPool::FindFileByName(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const (descriptor.cc:1334)
+        n1: 69888 0x8E5613A: google::protobuf::internal::AssignDescriptors(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, google::protobuf::internal::MigrationSchema const*, google::protobuf::Message const* const*, unsigned int const*, google::protobuf::MessageFactory*, google::protobuf::Metadata*, google::protobuf::EnumDescriptor const**, google::protobuf::ServiceDescriptor const**) (generated_message_reflection.cc:2311)
+         n1: 69888 0x4F4D500: caffe::protobuf_caffe_2eproto::(anonymous namespace)::protobuf_AssignDescriptors() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+          n1: 69888 0x8DDFA33: google::protobuf::GoogleOnceInitImpl(long*, google::protobuf::Closure*) (callback.h:129)
+           n1: 69888 0x4F49EA3: caffe::NetParameter::GetMetadata() const (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+            n1: 69888 0x8E80013: google::protobuf::TextFormat::Parser::Parse(google::protobuf::io::ZeroCopyInputStream*, google::protobuf::Message*) (message.h:331)
+             n1: 69888 0x8E802B5: google::protobuf::TextFormat::Parse(google::protobuf::io::ZeroCopyInputStream*, google::protobuf::Message*) (text_format.cc:1362)
+              n1: 69888 0x50B3BFD: caffe::ReadProtoFromTextFile(char const*, google::protobuf::Message*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+               n1: 69888 0x50BF7C4: caffe::ReadNetParamsFromTextFileOrDie(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::NetParameter*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+                n1: 69888 0x511E905: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+                 n1: 69888 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+                  n0: 69888 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+  n0: 16200 in 5 places, all below massif's threshold (1.00%)
+ n1: 72704 0x821DEFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106B8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107C9: _dl_init (dl-init.c:30)
+    n1: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+     n1: 72704 0x4: ???
+      n1: 72704 0xFFF000031: ???
+       n1: 72704 0xFFF00005D: ???
+        n1: 72704 0xFFF00006D: ???
+         n1: 72704 0xFFF000087: ???
+          n1: 72704 0xFFF000098: ???
+           n0: 72704 0xFFF0000A3: ???
+ n1: 66048 0x8DFF1BC: google::protobuf::DescriptorPool::Tables::AllocateString(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (descriptor.cc:1128)
+  n0: 66048 in 13 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=61070896
+mem_heap_B=4401541
+mem_heap_extra_B=126419
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=143107607
+mem_heap_B=18782637
+mem_heap_extra_B=130339
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=170215992
+mem_heap_B=20914233
+mem_heap_extra_B=130399
+mem_stacks_B=0
+heap_tree=detailed
+n3: 20914233 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 19093248 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 18026920 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 10176100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 10176100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 10176100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 10176100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 10176100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 10176100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 10176100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4205000 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4205000 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4205000 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4205000 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4205000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4205000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1065800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1065800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1065800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1065800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1065800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1065800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 89212 in 4 places, all below massif's threshold (1.00%)
+  n2: 1065932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1065800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1065800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1065800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1065800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1065800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1065800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1038219 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n3: 630080 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 270040 0x7DEA39D: cv::imread_(cv::String const&, int, int, cv::Mat*) (in /usr/local/lib/libopencv_imgcodecs.so.3.2.0)
+    n1: 270040 0x7DEA5D7: cv::imread(cv::String const&, int) (in /usr/local/lib/libopencv_imgcodecs.so.3.2.0)
+     n0: 270040 0x40492D: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 782766 in 306 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=212061746
+mem_heap_B=27284237
+mem_heap_extra_B=132947
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=229032312
+mem_heap_B=28487521
+mem_heap_extra_B=133167
+mem_stacks_B=0
+heap_tree=peak
+n3: 28487521 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 25856068 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 24721740 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 16546100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 16546100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 16546100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 16546100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 16546100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 16546100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 16546100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4459800 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4459800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4459800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4459800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4459800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4459800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1133800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 91232 in 7 places, all below massif's threshold (1.00%)
+  n2: 1133932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1133800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1848339 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n4: 1440200 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n2: 450080 0x592E271: cv::_OutputArray::create(cv::Size_<int>, int, int, bool, int) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n1: 360040 0x5ADD597: cv::Mat::convertTo(cv::_OutputArray const&, int, double, double) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+     n1: 360040 0x405EA2: Classifier::Preprocess(cv::Mat const&, std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n1: 360040 0x4079A5: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 360040 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 360040 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 90040 in 1 place, below massif's threshold (1.00%)
+   n2: 360040 0x592B9E6: cv::_OutputArray::create(int, int const*, int, int, bool, int) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n1: 360040 0x59351B4: cv::_OutputArray::createSameSize(cv::_InputArray const&, int) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+     n1: 360040 0x5A1A576: cv::arithm_op(cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, int, void (**)(unsigned char const*, unsigned long, unsigned char const*, unsigned long, unsigned char*, unsigned long, int, int, void*), bool, void*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+      n1: 360040 0x5A1B984: cv::subtract(cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+       n1: 360040 0x405FD0: Classifier::Preprocess(cv::Mat const&, std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 360040 0x4079A5: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n1: 360040 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+          n0: 360040 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 270040 in 1 place, below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 783114 in 309 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=8
+#-----------
+time=311133516
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=338193230
+mem_heap_B=27677045
+mem_heap_extra_B=133083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=380039051
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=397202105
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=479215620
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=detailed
+n3: 27677057 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 25856068 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 24721740 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 16546100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 16546100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 16546100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 16546100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 16546100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 16546100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 16546100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4459800 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4459800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4459800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4459800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4459800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4459800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1133800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 91232 in 7 places, all below massif's threshold (1.00%)
+  n2: 1133932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1133800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1038219 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n2: 630080 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 270040 in 3 places, all below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 782770 in 309 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=506281740
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=548120574
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=564551161
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=646564676
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=673494156
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=715332990
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=732413072
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=814426587
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=841552733
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=883391567
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=900880605
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=detailed
+n3: 27677061 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 25856068 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 24721740 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 16546100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 16546100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 16546100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 16546100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 16546100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 16546100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 16546100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4459800 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4459800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4459800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4459800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4459800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4459800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1133800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 91232 in 7 places, all below massif's threshold (1.00%)
+  n2: 1133932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1133800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1038219 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n2: 630080 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 270040 in 3 places, all below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 782774 in 309 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=982894120
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=1009935348
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=1051774182
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=1069110516
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=1151124031
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=1178176523
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=1220015357
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=1236724773
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=1318738288
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=1345661098
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=1387499932
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=1404377103
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=1486390618
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=1513516084
+mem_heap_B=27677045
+mem_heap_extra_B=133083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=1513523071
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=1555361905
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=detailed
+n3: 27677057 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 25856068 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 24721740 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 16546100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 16546100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 16546100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 16546100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 16546100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 16546100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 16546100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4459800 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4459800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4459800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4459800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4459800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4459800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1133800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 91232 in 7 places, all below massif's threshold (1.00%)
+  n2: 1133932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1133800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1038219 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n2: 630080 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 270040 in 3 places, all below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 782770 in 309 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=1572788322
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=1654801837
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=1681928070
+mem_heap_B=27677045
+mem_heap_extra_B=133083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=1681935057
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=1723773891
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=1741934679
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=1823948194
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=1851003504
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=detailed
+n3: 27677061 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 25856068 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 24721740 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 16546100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 16546100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 16546100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 16546100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 16546100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 16546100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 16546100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4459800 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4459800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4459800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4459800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4459800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4459800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1133800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 91232 in 7 places, all below massif's threshold (1.00%)
+  n2: 1133932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1133800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1038219 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n2: 630080 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 270040 in 3 places, all below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 782774 in 309 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=1892842338
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=1898445035
+mem_heap_B=27677045
+mem_heap_extra_B=133083
+mem_stacks_B=0
+heap_tree=detailed
+n3: 27677045 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 25856068 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 24721740 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 16546100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 16546100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 16546100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 16546100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 16546100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 16546100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 16546100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4459800 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4459800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4459800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4459800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4459800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4459800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1133800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 91232 in 7 places, all below massif's threshold (1.00%)
+  n2: 1133932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1133800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1038219 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n2: 630080 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 270040 in 3 places, all below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 782758 in 309 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=1898452840
+mem_heap_B=27406893
+mem_heap_extra_B=133051
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=1898460291
+mem_heap_B=27699365
+mem_heap_extra_B=133163
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=1898533477
+mem_heap_B=27736518
+mem_heap_extra_B=133234
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=1907622605
+mem_heap_B=27732422
+mem_heap_extra_B=133226
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=1907711463
+mem_heap_B=27676965
+mem_heap_extra_B=133083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=1907720412
+mem_heap_B=27676965
+mem_heap_extra_B=133083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=1907727465
+mem_heap_B=27676957
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=1908817245
+mem_heap_B=28127209
+mem_heap_extra_B=133111
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=1908925890
+mem_heap_B=28487337
+mem_heap_extra_B=133143
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=1909051332
+mem_heap_B=28487521
+mem_heap_extra_B=133167
+mem_stacks_B=0
+heap_tree=detailed
+n3: 28487521 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 25856068 0x50B13CF: caffe::SyncedMemory::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+  n6: 24721740 0x5123CF0: caffe::Blob<float>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 16546100 0x5036686: caffe::BaseConvolutionLayer<float>::forward_cpu_gemm(float const*, float const*, float*, bool) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 16546100 0x4FE3A64: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 16546100 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 16546100 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 16546100 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 16546100 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n0: 16546100 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 4459800 0x4FE3A0E: caffe::ConvolutionLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 4459800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 4459800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 4459800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 4459800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 4459800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n3: 2130808 0x4FB9942: caffe::ConstantFiller<float>::Fill(caffe::Blob<float>*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1604000 0x501E515: caffe::InnerProductLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1604000 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1604000 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 1604000 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1604000 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 524200 0x503A15F: caffe::BaseConvolutionLayer<float>::LayerSetUp(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 524200 0x511BA77: caffe::Net<float>::Init(caffe::NetParameter const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 524200 0x511EAC8: caffe::Net<float>::Net(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, caffe::Phase, int, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+       n1: 524200 0x4095D9: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 524200 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 2608 in 2 places, all below massif's threshold (1.00%)
+   n1: 1133800 0x4FB518B: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n1: 360000 0x4072A6: Classifier::WrapInputLayer(std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360000 0x407997: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n1: 360000 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n0: 360000 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 91232 in 7 places, all below massif's threshold (1.00%)
+  n2: 1133932 0x5125990: caffe::Blob<int>::mutable_cpu_data() (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+   n1: 1133800 0x4FB58E3: caffe::PoolingLayer<float>::Forward_cpu(std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&, std::vector<caffe::Blob<float>*, std::allocator<caffe::Blob<float>*> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+    n1: 1133800 0x510DABE: caffe::Net<float>::ForwardFromTo(int, int) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+     n1: 1133800 0x510DCC4: caffe::Net<float>::Forward(float*) (in /home/gaston/caffe_repo/caffe/.build_release/lib/libcaffe.so.1.0.0)
+      n1: 1133800 0x4079AF: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 1133800 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 1133800 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 132 in 5 places, all below massif's threshold (1.00%)
+  n0: 396 in 2 places, all below massif's threshold (1.00%)
+ n3: 1848339 0x5AE9600: cv::fastMalloc(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+  n4: 1440200 0x5907E52: cv::Mat::create(int, int const*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n2: 450080 0x592E271: cv::_OutputArray::create(cv::Size_<int>, int, int, bool, int) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n1: 360040 0x5ADD597: cv::Mat::convertTo(cv::_OutputArray const&, int, double, double) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+     n1: 360040 0x405EA2: Classifier::Preprocess(cv::Mat const&, std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+      n1: 360040 0x4079A5: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+       n1: 360040 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n0: 360040 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 90040 in 1 place, below massif's threshold (1.00%)
+   n2: 360040 0x592B9E6: cv::_OutputArray::create(int, int const*, int, int, bool, int) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n1: 360040 0x59351B4: cv::_OutputArray::createSameSize(cv::_InputArray const&, int) const (in /usr/local/lib/libopencv_core.so.3.2.0)
+     n1: 360040 0x5A1A576: cv::arithm_op(cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, int, void (**)(unsigned char const*, unsigned long, unsigned char const*, unsigned long, unsigned char*, unsigned long, int, int, void*), bool, void*, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+      n1: 360040 0x5A1B984: cv::subtract(cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, int) (in /usr/local/lib/libopencv_core.so.3.2.0)
+       n1: 360040 0x405FD0: Classifier::Preprocess(cv::Mat const&, std::vector<cv::Mat, std::allocator<cv::Mat> >*) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+        n1: 360040 0x4079A5: Classifier::Predict(cv::Mat const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+         n1: 360040 0x407C74: Classifier::Classify[abi:cxx11](cv::Mat const&, int) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+          n0: 360040 0x404A90: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 360040 0x408A40: Classifier::SetMean(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+    n1: 360040 0x409837: Classifier::Classifier(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+     n0: 360040 0x404601: main (in /home/gaston/caffe_repo/caffe/.build_release/project/tool/classification.bin)
+   n0: 270040 in 1 place, below massif's threshold (1.00%)
+  n2: 407116 0x5A04F5B: cv::String::allocate(unsigned long) (in /usr/local/lib/libopencv_core.so.3.2.0)
+   n1: 405852 0x5958351: cv::ocl::ProgramSource::ProgramSource(char const*) (in /usr/local/lib/libopencv_core.so.3.2.0)
+    n0: 405852 in 64 places, all below massif's threshold (1.00%)
+   n0: 1264 in 29 places, all below massif's threshold (1.00%)
+  n0: 1023 in 1 place, below massif's threshold (1.00%)
+ n0: 783114 in 309 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=1909119633
+mem_heap_B=28487425
+mem_heap_extra_B=133159
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=1909207322
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=1991220837
+mem_heap_B=27677057
+mem_heap_extra_B=133071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=2018244788
+mem_heap_B=27677045
+mem_heap_extra_B=133083
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=2018251775
+mem_heap_B=27677061
+mem_heap_extra_B=133091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=2046165564
+mem_heap_B=27676017
+mem_heap_extra_B=133055
+mem_stacks_B=0
+heap_tree=empty

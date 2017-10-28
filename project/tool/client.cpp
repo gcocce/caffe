@@ -1,45 +1,40 @@
 #include <caffe/caffe.hpp>
-#ifdef USE_OPENCV
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#endif  // USE_OPENCV
 #include <algorithm>
 #include <iosfwd>
 #include <memory>
 #include <string>
 #include <utility>
 #include <vector>
-
 #include <fstream>
 
 
-#ifdef USE_OPENCV
-using namespace caffe;  // NOLINT(build/namespaces)
+using namespace caffe;
 using std::string;
 
 std::vector<string> labels_;
 
-/* Pair (label, confidence) representing a prediction. */
-typedef std::pair<string, float> Prediction;
+typedef std::pair<string, float> Prediccion;
 
-class Classifier {
+class Clasificador {
  public:
-  Classifier(const string& model_file,
+  Clasificador(const string& model_file,
              const string& trained_file,
              const string& mean_file,
              const string& label_file);
 
-  std::vector<Prediction> Classify(const cv::Mat& img, int N = 5);
+  std::vector<Prediccion> Clasificar(const cv::Mat& img, int N = 5);
 
  private:
-  void SetMean(const string& mean_file);
+  void SetMedia(const string& mean_file);
 
-  std::vector<float> Predict(const cv::Mat& img);
+  std::vector<float> Predecir(const cv::Mat& img);
 
-  void WrapInputLayer(std::vector<cv::Mat>* input_channels);
+  void ArreglarInputLayer(std::vector<cv::Mat>* input_channels);
 
-  void Preprocess(const cv::Mat& img,
+  void Preprocesar(const cv::Mat& img,
                   std::vector<cv::Mat>* input_channels);
 
  private:
@@ -50,7 +45,7 @@ class Classifier {
   std::vector<string> labels_;
 };
 
-Classifier::Classifier(const string& model_file,
+Clasificador::Clasificador(const string& model_file,
                        const string& trained_file,
                        const string& mean_file,
                        const string& label_file) {
@@ -74,7 +69,7 @@ Classifier::Classifier(const string& model_file,
   input_geometry_ = cv::Size(input_layer->width(), input_layer->height());
 
   /* Load the binaryproto mean file. */
-  SetMean(mean_file);
+  SetMedia(mean_file);
 
   /* Load labels. */
   std::ifstream labels(label_file.c_str());
@@ -106,23 +101,23 @@ static std::vector<int> Argmax(const std::vector<float>& v, int N) {
   return result;
 }
 
-/* Return the top N predictions. */
-std::vector<Prediction> Classifier::Classify(const cv::Mat& img, int N) {
-  std::vector<float> output = Predict(img);
+/* Return the top N Prediccions. */
+std::vector<Prediccion> Clasificador::Clasificar(const cv::Mat& img, int N) {
+  std::vector<float> output = Predecir(img);
 
   N = std::min<int>(labels_.size(), N);
   std::vector<int> maxN = Argmax(output, N);
-  std::vector<Prediction> predictions;
+  std::vector<Prediccion> Prediccions;
   for (int i = 0; i < N; ++i) {
     int idx = maxN[i];
-    predictions.push_back(std::make_pair(labels_[idx], output[idx]));
+    Prediccions.push_back(std::make_pair(labels_[idx], output[idx]));
   }
 
-  return predictions;
+  return Prediccions;
 }
 
 /* Load the mean file in binaryproto format. */
-void Classifier::SetMean(const string& mean_file) {
+void Clasificador::SetMedia(const string& mean_file) {
   BlobProto blob_proto;
   ReadProtoFromBinaryFileOrDie(mean_file.c_str(), &blob_proto);
 
@@ -152,7 +147,7 @@ void Classifier::SetMean(const string& mean_file) {
   mean_ = cv::Mat(input_geometry_, mean.type(), channel_mean);
 }
 
-std::vector<float> Classifier::Predict(const cv::Mat& img) {
+std::vector<float> Clasificador::Predecir(const cv::Mat& img) {
   Blob<float>* input_layer = net_->input_blobs()[0];
   input_layer->Reshape(1, num_channels_,
                        input_geometry_.height, input_geometry_.width);
@@ -160,9 +155,9 @@ std::vector<float> Classifier::Predict(const cv::Mat& img) {
   net_->Reshape();
 
   std::vector<cv::Mat> input_channels;
-  WrapInputLayer(&input_channels);
+  ArreglarInputLayer(&input_channels);
 
-  Preprocess(img, &input_channels);
+  Preprocesar(img, &input_channels);
 
   net_->Forward();
 
@@ -175,10 +170,10 @@ std::vector<float> Classifier::Predict(const cv::Mat& img) {
 
 /* Wrap the input layer of the network in separate cv::Mat objects
  * (one per channel). This way we save one memcpy operation and we
- * don't need to rely on cudaMemcpy2D. The last preprocessing
+ * don't need to rely on cudaMemcpy2D. The last Preprocesaring
  * operation will write the separate channels directly to the input
  * layer. */
-void Classifier::WrapInputLayer(std::vector<cv::Mat>* input_channels) {
+void Clasificador::ArreglarInputLayer(std::vector<cv::Mat>* input_channels) {
   Blob<float>* input_layer = net_->input_blobs()[0];
 
   int width = input_layer->width();
@@ -191,7 +186,7 @@ void Classifier::WrapInputLayer(std::vector<cv::Mat>* input_channels) {
   }
 }
 
-void Classifier::Preprocess(const cv::Mat& img,
+void Clasificador::Preprocesar(const cv::Mat& img,
                             std::vector<cv::Mat>* input_channels) {
   /* Convert the input image to the input image format of the network. */
   cv::Mat sample;
@@ -233,9 +228,14 @@ void Classifier::Preprocess(const cv::Mat& img,
 
 int main(int argc, char** argv) {
   if (argc != 6) {
-    std::cerr << "Usage: " << argv[0]
+    std::cerr << "Uso para clasificar: " << argv[0]
               << " deploy.prototxt network.caffemodel"
               << " mean.binaryproto labels.txt img.jpg" << std::endl;
+
+    std::cerr << "Uso para validar: " << argv[0]
+			  << "	Validacion: "
+              << " deploy.prototxt network.caffemodel"
+              << " mean.binaryproto labels.txt lista.txt" << std::endl;              
     return 1;
   }
 
@@ -245,7 +245,7 @@ int main(int argc, char** argv) {
   string trained_file = argv[2];
   string mean_file    = argv[3];
   string label_file   = argv[4];
-  Classifier classifier(model_file, trained_file, mean_file, label_file);
+  Clasificador Clasificador(model_file, trained_file, mean_file, label_file);
 
   string file = argv[5];
 
@@ -257,14 +257,7 @@ int main(int argc, char** argv) {
     while (std::getline(labels, line))
       labels_.push_back(string(line));
 
-
-    const clock_t start = clock();
-
-	clock_t clock_start_prediction=0;
-  	clock_t clock_end_prediction=0;
-  	clock_t clock_total_prediction=0;
-
-    std::cout << "---------- Validation for "
+    std::cout << "---------- Validacion para "
               << file << " ----------" << std::endl;
 
     int valids=0;
@@ -279,67 +272,43 @@ int main(int argc, char** argv) {
       total++;
 
       cv::Mat img = cv::imread(img_file, -1);
-      CHECK(!img.empty()) << "Unable to decode image " << img;
+      CHECK(!img.empty()) << "Error al decodificar la imagen " << img;
 
-      clock_start_prediction = clock();
-      std::vector<Prediction> predictions = classifier.Classify(img);
-      clock_end_prediction = clock();
+      std::vector<Prediccion> Prediccions = Clasificador.Clasificar(img);
 
-      clock_total_prediction+= clock_end_prediction - clock_start_prediction;
+      Prediccion p = Prediccions[0];
 
-      Prediction p = predictions[0];
+      string Predecired=labels_[tag];
 
-      string predicted=labels_[tag];
-
-      if(p.first.compare(predicted)==0){
-        std::cout << "---------- Validation for "
-              << img_file << " ---------- Valid " << std::endl;
+      if(p.first.compare(Predecired)==0){
+        std::cout << "---------- Validacion para "
+              << img_file << " ---------- Correcta " << std::endl;
 
         valids++;
 
       }else{
-        std::cout << "---------- Validation for "
-              << img_file << " ---------- Not Valid" << std::endl;
+        std::cout << "---------- Validacion para "
+              << img_file << " ---------- Incorrecta" << std::endl;
 
       }
     }
 
-    const clock_t end = clock();
-    clock_t diff = end - start;
-
     std::cout << "---------- Total:  " << total 
-        << " ---------- Valids:  " << valids 
-        <<  "---------- Acuracy: " << std::fixed << std::setprecision(2) << (float) (valids * 100) / total << std::endl;
-
-    std::cout << "---------- Elapsed total time:  " << 
-        std::fixed << std::setprecision(4)  << (float) diff / CLOCKS_PER_SEC <<" seconds " << std::endl;
-
-    std::cout << "---------- Average process time: " << 
-        std::fixed << std::setprecision(4)  << 
-        (float)((1000 * diff) / CLOCKS_PER_SEC) / total <<" miliseconds " << std::endl;
-
-    std::cout << "---------- Average clasification time: " << 
-        std::fixed << std::setprecision(4)  << 
-        (float)((1000 * clock_total_prediction) / CLOCKS_PER_SEC) / total <<" miliseconds " << std::endl;        
-
+        << " ---------- Validas:  " << valids 
+        <<  "---------- Exactitud: " << std::fixed << std::setprecision(2) << (float) (valids * 100) / total << std::endl;
   }else{
-    std::cout << "---------- Prediction for "
+    std::cout << "---------- Prediccion para "
               << file << " ----------" << std::endl;
 
     cv::Mat img = cv::imread(file, -1);
     CHECK(!img.empty()) << "Unable to decode image " << file;
-    std::vector<Prediction> predictions = classifier.Classify(img);
+    std::vector<Prediccion> Prediccions = Clasificador.Clasificar(img);
 
-    /* Print the top N predictions. */
-    for (size_t i = 0; i < predictions.size(); ++i) {
-      Prediction p = predictions[i];
+    /* Print the top N Prediccions. */
+    for (size_t i = 0; i < Prediccions.size(); ++i) {
+      Prediccion p = Prediccions[i];
       std::cout << std::fixed << std::setprecision(4) << p.second << " - \""
                 << p.first << "\"" << std::endl;
     }              
   }
 }
-#else
-int main(int argc, char** argv) {
-  LOG(FATAL) << "This example requires OpenCV; compile with USE_OPENCV.";
-}
-#endif  // USE_OPENCV
