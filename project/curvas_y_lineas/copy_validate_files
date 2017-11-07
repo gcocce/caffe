@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-set -e
-
-mkdir project
-cd ../../images/curvas_y_lineas/project
-cp -R validate ../../../project/curvas_y_lineas/project
-
-cd ../../../project/curvas_y_lineas

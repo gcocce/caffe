@@ -1,0 +1,799 @@
+
+
+gaston@ML-Ubuntu-VB:~/caffe/project/aros_y_rectangulos$ ../../build/tools/convert_imageset -gray ./ train_file.txt  mylistdb
+I0923 18:02:07.861110  2726 convert_imageset.cpp:89] A total of 20000 images.
+I0923 18:02:07.862524  2726 db_lmdb.cpp:35] Opened lmdb mylistdb
+I0923 18:02:09.251230  2726 convert_imageset.cpp:147] Processed 1000 files.
+I0923 18:02:10.428805  2726 convert_imageset.cpp:147] Processed 2000 files.
+I0923 18:02:11.622128  2726 convert_imageset.cpp:147] Processed 3000 files.
+I0923 18:02:12.778621  2726 convert_imageset.cpp:147] Processed 4000 files.
+I0923 18:02:13.964974  2726 convert_imageset.cpp:147] Processed 5000 files.
+I0923 18:02:15.369767  2726 convert_imageset.cpp:147] Processed 6000 files.
+I0923 18:02:16.557955  2726 convert_imageset.cpp:147] Processed 7000 files.
+I0923 18:02:17.739781  2726 convert_imageset.cpp:147] Processed 8000 files.
+I0923 18:02:18.838003  2726 convert_imageset.cpp:147] Processed 9000 files.
+I0923 18:02:20.333848  2726 convert_imageset.cpp:147] Processed 10000 files.
+I0923 18:02:21.743525  2726 convert_imageset.cpp:147] Processed 11000 files.
+I0923 18:02:22.835781  2726 convert_imageset.cpp:147] Processed 12000 files.
+I0923 18:02:23.979558  2726 convert_imageset.cpp:147] Processed 13000 files.
+I0923 18:02:25.136673  2726 convert_imageset.cpp:147] Processed 14000 files.
+I0923 18:02:26.215569  2726 convert_imageset.cpp:147] Processed 15000 files.
+I0923 18:02:27.366843  2726 convert_imageset.cpp:147] Processed 16000 files.
+I0923 18:02:28.462561  2726 convert_imageset.cpp:147] Processed 17000 files.
+I0923 18:02:29.583168  2726 convert_imageset.cpp:147] Processed 18000 files.
+I0923 18:02:30.730161  2726 convert_imageset.cpp:147] Processed 19000 files.
+I0923 18:02:31.760090  2726 convert_imageset.cpp:147] Processed 20000 files.
+
+gaston@ML-Ubuntu-VB:~/caffe/project/aros_y_rectangulos$ ../../build/tools/convert_imageset -gray ./ test_file.txt  mytestlistdb
+I0923 18:05:12.425779  2752 convert_imageset.cpp:89] A total of 4000 images.
+I0923 18:05:12.427651  2752 db_lmdb.cpp:35] Opened lmdb mytestlistdb
+I0923 18:05:13.838310  2752 convert_imageset.cpp:147] Processed 1000 files.
+I0923 18:05:14.945374  2752 convert_imageset.cpp:147] Processed 2000 files.
+I0923 18:05:16.614521  2752 convert_imageset.cpp:147] Processed 3000 files.
+I0923 18:05:17.746142  2752 convert_imageset.cpp:147] Processed 4000 files.
+
+
+gaston@ML-Ubuntu-VB:~/caffe/project/aros_y_rectangulos$ ../../build/tools/compute_image_mean mylistdb/ mean.binaryproto
+I0923 18:06:13.094246  2763 db_lmdb.cpp:35] Opened lmdb mylistdb/
+I0923 18:06:13.112220  2763 compute_image_mean.cpp:70] Starting iteration
+I0923 18:06:13.608053  2763 compute_image_mean.cpp:95] Processed 10000 files.
+I0923 18:06:14.108364  2763 compute_image_mean.cpp:95] Processed 20000 files.
+I0923 18:06:14.108660  2763 compute_image_mean.cpp:108] Write to mean.binaryproto
+I0923 18:06:14.110307  2763 compute_image_mean.cpp:114] Number of channels: 1
+I0923 18:06:14.110381  2763 compute_image_mean.cpp:119] mean_value channel [0]: 124.178
+
+
+
+gaston@ML-Ubuntu-VB:~/caffe/project/aros_y_rectangulos$ ./train.sh 
+I0923 18:09:10.036043  2794 caffe.cpp:211] Use CPU.
+I0923 18:09:10.036301  2794 solver.cpp:44] Initializing solver from parameters: 
+test_iter: 50
+test_interval: 100
+base_lr: 1e-06
+display: 50
+max_iter: 10000
+lr_policy: "inv"
+gamma: 0.0001
+power: 0.75
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 500
+snapshot_prefix: "train"
+solver_mode: CPU
+net: "train_val.prototxt"
+train_state {
+  level: 0
+  stage: ""
+}
+I0923 18:09:10.038148  2794 solver.cpp:87] Creating training net from net file: train_val.prototxt
+I0923 18:09:10.039785  2794 net.cpp:294] The NetState phase (0) differed from the phase (1) specified by a rule in layer data
+I0923 18:09:10.039950  2794 net.cpp:294] The NetState phase (0) differed from the phase (1) specified by a rule in layer accuracy
+I0923 18:09:10.040036  2794 net.cpp:51] Initializing net from parameters: 
+name: "AroRectNet"
+state {
+  phase: TRAIN
+  level: 0
+  stage: ""
+}
+layer {
+  name: "data"
+  type: "Data"
+  top: "data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  transform_param {
+    mirror: false
+    crop_size: 200
+    mean_file: "mean.binaryproto"
+  }
+  data_param {
+    source: "mylistdb"
+    batch_size: 100
+    backend: LMDB
+  }
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 40
+    kernel_size: 7
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 50
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "conv2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "ip1"
+  type: "InnerProduct"
+  bottom: "pool2"
+  top: "ip1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 500
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "ip1"
+  top: "ip1"
+}
+layer {
+  name: "ip2"
+  type: "InnerProduct"
+  bottom: "ip1"
+  top: "ip2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "ip2"
+  bottom: "label"
+  top: "loss"
+}
+I0923 18:09:10.045116  2794 layer_factory.hpp:77] Creating layer data
+I0923 18:09:10.045250  2794 db_lmdb.cpp:35] Opened lmdb mylistdb
+I0923 18:09:10.045305  2794 net.cpp:84] Creating Layer data
+I0923 18:09:10.045585  2794 net.cpp:380] data -> data
+I0923 18:09:10.045637  2794 net.cpp:380] data -> label
+I0923 18:09:10.045675  2794 data_transformer.cpp:25] Loading mean file from: mean.binaryproto
+I0923 18:09:10.049996  2794 data_layer.cpp:45] output data size: 100,1,200,200
+I0923 18:09:10.050145  2794 net.cpp:122] Setting up data
+I0923 18:09:10.050608  2794 net.cpp:129] Top shape: 100 1 200 200 (4000000)
+I0923 18:09:10.050644  2794 net.cpp:129] Top shape: 100 (100)
+I0923 18:09:10.050671  2794 net.cpp:137] Memory required for data: 16000400
+I0923 18:09:10.050703  2794 layer_factory.hpp:77] Creating layer conv1
+I0923 18:09:10.050756  2794 net.cpp:84] Creating Layer conv1
+I0923 18:09:10.050796  2794 net.cpp:406] conv1 <- data
+I0923 18:09:10.050959  2794 net.cpp:380] conv1 -> conv1
+I0923 18:09:10.051488  2794 net.cpp:122] Setting up conv1
+I0923 18:09:10.051529  2794 net.cpp:129] Top shape: 100 40 194 194 (150544000)
+I0923 18:09:10.051555  2794 net.cpp:137] Memory required for data: 618176400
+I0923 18:09:10.051595  2794 layer_factory.hpp:77] Creating layer pool1
+I0923 18:09:10.051627  2794 net.cpp:84] Creating Layer pool1
+I0923 18:09:10.051676  2794 net.cpp:406] pool1 <- conv1
+I0923 18:09:10.051704  2794 net.cpp:380] pool1 -> pool1
+I0923 18:09:10.051746  2794 net.cpp:122] Setting up pool1
+I0923 18:09:10.051777  2794 net.cpp:129] Top shape: 100 40 97 97 (37636000)
+I0923 18:09:10.051802  2794 net.cpp:137] Memory required for data: 768720400
+I0923 18:09:10.053097  2794 layer_factory.hpp:77] Creating layer conv2
+I0923 18:09:10.053139  2794 net.cpp:84] Creating Layer conv2
+I0923 18:09:10.053167  2794 net.cpp:406] conv2 <- pool1
+I0923 18:09:10.053195  2794 net.cpp:380] conv2 -> conv2
+I0923 18:09:10.053721  2794 net.cpp:122] Setting up conv2
+I0923 18:09:10.053761  2794 net.cpp:129] Top shape: 100 50 93 93 (43245000)
+I0923 18:09:10.053787  2794 net.cpp:137] Memory required for data: 941700400
+I0923 18:09:10.054006  2794 layer_factory.hpp:77] Creating layer pool2
+I0923 18:09:10.054042  2794 net.cpp:84] Creating Layer pool2
+I0923 18:09:10.054069  2794 net.cpp:406] pool2 <- conv2
+I0923 18:09:10.054096  2794 net.cpp:380] pool2 -> pool2
+I0923 18:09:10.054127  2794 net.cpp:122] Setting up pool2
+I0923 18:09:10.054157  2794 net.cpp:129] Top shape: 100 50 47 47 (11045000)
+I0923 18:09:10.054183  2794 net.cpp:137] Memory required for data: 985880400
+I0923 18:09:10.054208  2794 layer_factory.hpp:77] Creating layer ip1
+I0923 18:09:10.054236  2794 net.cpp:84] Creating Layer ip1
+I0923 18:09:10.054262  2794 net.cpp:406] ip1 <- pool2
+I0923 18:09:10.054291  2794 net.cpp:380] ip1 -> ip1
+I0923 18:09:10.860244  2794 net.cpp:122] Setting up ip1
+I0923 18:09:10.860451  2794 net.cpp:129] Top shape: 100 500 (50000)
+I0923 18:09:10.860486  2794 net.cpp:137] Memory required for data: 986080400
+I0923 18:09:10.860522  2794 layer_factory.hpp:77] Creating layer relu1
+I0923 18:09:10.860553  2794 net.cpp:84] Creating Layer relu1
+I0923 18:09:10.860579  2794 net.cpp:406] relu1 <- ip1
+I0923 18:09:10.860608  2794 net.cpp:367] relu1 -> ip1 (in-place)
+I0923 18:09:10.860640  2794 net.cpp:122] Setting up relu1
+I0923 18:09:10.860667  2794 net.cpp:129] Top shape: 100 500 (50000)
+I0923 18:09:10.860692  2794 net.cpp:137] Memory required for data: 986280400
+I0923 18:09:10.860716  2794 layer_factory.hpp:77] Creating layer ip2
+I0923 18:09:10.860744  2794 net.cpp:84] Creating Layer ip2
+I0923 18:09:10.860770  2794 net.cpp:406] ip2 <- ip1
+I0923 18:09:10.860797  2794 net.cpp:380] ip2 -> ip2
+I0923 18:09:10.861058  2794 net.cpp:122] Setting up ip2
+I0923 18:09:10.861095  2794 net.cpp:129] Top shape: 100 2 (200)
+I0923 18:09:10.861120  2794 net.cpp:137] Memory required for data: 986281200
+I0923 18:09:10.861148  2794 layer_factory.hpp:77] Creating layer loss
+I0923 18:09:10.861178  2794 net.cpp:84] Creating Layer loss
+I0923 18:09:10.861204  2794 net.cpp:406] loss <- ip2
+I0923 18:09:10.861230  2794 net.cpp:406] loss <- label
+I0923 18:09:10.861258  2794 net.cpp:380] loss -> loss
+I0923 18:09:10.861290  2794 layer_factory.hpp:77] Creating layer loss
+I0923 18:09:10.861532  2794 net.cpp:122] Setting up loss
+I0923 18:09:10.861569  2794 net.cpp:129] Top shape: (1)
+I0923 18:09:10.861595  2794 net.cpp:132]     with loss weight 1
+I0923 18:09:10.861632  2794 net.cpp:137] Memory required for data: 986281204
+I0923 18:09:10.861657  2794 net.cpp:198] loss needs backward computation.
+I0923 18:09:10.861686  2794 net.cpp:198] ip2 needs backward computation.
+I0923 18:09:10.861712  2794 net.cpp:198] relu1 needs backward computation.
+I0923 18:09:10.861737  2794 net.cpp:198] ip1 needs backward computation.
+I0923 18:09:10.861763  2794 net.cpp:198] pool2 needs backward computation.
+I0923 18:09:10.861788  2794 net.cpp:198] conv2 needs backward computation.
+I0923 18:09:10.861814  2794 net.cpp:198] pool1 needs backward computation.
+I0923 18:09:10.861968  2794 net.cpp:198] conv1 needs backward computation.
+I0923 18:09:10.861996  2794 net.cpp:200] data does not need backward computation.
+I0923 18:09:10.862022  2794 net.cpp:242] This network produces output loss
+I0923 18:09:10.862056  2794 net.cpp:255] Network initialization done.
+I0923 18:09:10.862251  2794 solver.cpp:172] Creating test net (#0) specified by net file: train_val.prototxt
+I0923 18:09:10.862319  2794 net.cpp:294] The NetState phase (1) differed from the phase (0) specified by a rule in layer data
+I0923 18:09:10.862546  2794 net.cpp:51] Initializing net from parameters: 
+name: "AroRectNet"
+state {
+  phase: TEST
+}
+layer {
+  name: "data"
+  type: "Data"
+  top: "data"
+  top: "label"
+  include {
+    phase: TEST
+  }
+  transform_param {
+    mirror: false
+    crop_size: 200
+    mean_file: "mean.binaryproto"
+  }
+  data_param {
+    source: "mytestlistdb"
+    batch_size: 40
+    backend: LMDB
+  }
+}
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 40
+    kernel_size: 7
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "pool1"
+  type: "Pooling"
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 50
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "conv2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "ip1"
+  type: "InnerProduct"
+  bottom: "pool2"
+  top: "ip1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 500
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "ip1"
+  top: "ip1"
+}
+layer {
+  name: "ip2"
+  type: "InnerProduct"
+  bottom: "ip1"
+  top: "ip2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 2
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "ip2"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
+}
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "ip2"
+  bottom: "label"
+  top: "loss"
+}
+I0923 18:09:10.866647  2794 layer_factory.hpp:77] Creating layer data
+I0923 18:09:10.866729  2794 db_lmdb.cpp:35] Opened lmdb mytestlistdb
+I0923 18:09:10.866772  2794 net.cpp:84] Creating Layer data
+I0923 18:09:10.866802  2794 net.cpp:380] data -> data
+I0923 18:09:10.866961  2794 net.cpp:380] data -> label
+I0923 18:09:10.867002  2794 data_transformer.cpp:25] Loading mean file from: mean.binaryproto
+I0923 18:09:10.867321  2794 data_layer.cpp:45] output data size: 40,1,200,200
+I0923 18:09:10.867558  2794 net.cpp:122] Setting up data
+I0923 18:09:10.867591  2794 net.cpp:129] Top shape: 40 1 200 200 (1600000)
+I0923 18:09:10.867619  2794 net.cpp:129] Top shape: 40 (40)
+I0923 18:09:10.867645  2794 net.cpp:137] Memory required for data: 6400160
+I0923 18:09:10.867669  2794 layer_factory.hpp:77] Creating layer label_data_1_split
+I0923 18:09:10.867697  2794 net.cpp:84] Creating Layer label_data_1_split
+I0923 18:09:10.867723  2794 net.cpp:406] label_data_1_split <- label
+I0923 18:09:10.867751  2794 net.cpp:380] label_data_1_split -> label_data_1_split_0
+I0923 18:09:10.867781  2794 net.cpp:380] label_data_1_split -> label_data_1_split_1
+I0923 18:09:10.867811  2794 net.cpp:122] Setting up label_data_1_split
+I0923 18:09:10.867969  2794 net.cpp:129] Top shape: 40 (40)
+I0923 18:09:10.867997  2794 net.cpp:129] Top shape: 40 (40)
+I0923 18:09:10.868022  2794 net.cpp:137] Memory required for data: 6400480
+I0923 18:09:10.868047  2794 layer_factory.hpp:77] Creating layer conv1
+I0923 18:09:10.868077  2794 net.cpp:84] Creating Layer conv1
+I0923 18:09:10.868104  2794 net.cpp:406] conv1 <- data
+I0923 18:09:10.868131  2794 net.cpp:380] conv1 -> conv1
+I0923 18:09:10.868202  2794 net.cpp:122] Setting up conv1
+I0923 18:09:10.868234  2794 net.cpp:129] Top shape: 40 40 194 194 (60217600)
+I0923 18:09:10.868259  2794 net.cpp:137] Memory required for data: 247270880
+I0923 18:09:10.868304  2794 layer_factory.hpp:77] Creating layer pool1
+I0923 18:09:10.868456  2794 net.cpp:84] Creating Layer pool1
+I0923 18:09:10.868489  2794 net.cpp:406] pool1 <- conv1
+I0923 18:09:10.868517  2794 net.cpp:380] pool1 -> pool1
+I0923 18:09:10.868549  2794 net.cpp:122] Setting up pool1
+I0923 18:09:10.868578  2794 net.cpp:129] Top shape: 40 40 97 97 (15054400)
+I0923 18:09:10.868603  2794 net.cpp:137] Memory required for data: 307488480
+I0923 18:09:10.868628  2794 layer_factory.hpp:77] Creating layer conv2
+I0923 18:09:10.868657  2794 net.cpp:84] Creating Layer conv2
+I0923 18:09:10.868683  2794 net.cpp:406] conv2 <- pool1
+I0923 18:09:10.868711  2794 net.cpp:380] conv2 -> conv2
+I0923 18:09:10.869213  2794 net.cpp:122] Setting up conv2
+I0923 18:09:10.869252  2794 net.cpp:129] Top shape: 40 50 93 93 (17298000)
+I0923 18:09:10.869279  2794 net.cpp:137] Memory required for data: 376680480
+I0923 18:09:10.869308  2794 layer_factory.hpp:77] Creating layer pool2
+I0923 18:09:10.869572  2794 net.cpp:84] Creating Layer pool2
+I0923 18:09:10.869747  2794 net.cpp:406] pool2 <- conv2
+I0923 18:09:10.870060  2794 net.cpp:380] pool2 -> pool2
+I0923 18:09:10.870239  2794 net.cpp:122] Setting up pool2
+I0923 18:09:10.871541  2794 net.cpp:129] Top shape: 40 50 47 47 (4418000)
+I0923 18:09:10.871551  2794 net.cpp:137] Memory required for data: 394352480
+I0923 18:09:10.871556  2794 layer_factory.hpp:77] Creating layer ip1
+I0923 18:09:10.871563  2794 net.cpp:84] Creating Layer ip1
+I0923 18:09:10.871568  2794 net.cpp:406] ip1 <- pool2
+I0923 18:09:10.871578  2794 net.cpp:380] ip1 -> ip1
+I0923 18:09:11.590657  2794 net.cpp:122] Setting up ip1
+I0923 18:09:11.590747  2794 net.cpp:129] Top shape: 40 500 (20000)
+I0923 18:09:11.590775  2794 net.cpp:137] Memory required for data: 394432480
+I0923 18:09:11.591017  2794 layer_factory.hpp:77] Creating layer relu1
+I0923 18:09:11.591051  2794 net.cpp:84] Creating Layer relu1
+I0923 18:09:11.591078  2794 net.cpp:406] relu1 <- ip1
+I0923 18:09:11.591106  2794 net.cpp:367] relu1 -> ip1 (in-place)
+I0923 18:09:11.591140  2794 net.cpp:122] Setting up relu1
+I0923 18:09:11.591167  2794 net.cpp:129] Top shape: 40 500 (20000)
+I0923 18:09:11.591192  2794 net.cpp:137] Memory required for data: 394512480
+I0923 18:09:11.591217  2794 layer_factory.hpp:77] Creating layer ip2
+I0923 18:09:11.591248  2794 net.cpp:84] Creating Layer ip2
+I0923 18:09:11.591274  2794 net.cpp:406] ip2 <- ip1
+I0923 18:09:11.591531  2794 net.cpp:380] ip2 -> ip2
+I0923 18:09:11.591578  2794 net.cpp:122] Setting up ip2
+I0923 18:09:11.591609  2794 net.cpp:129] Top shape: 40 2 (80)
+I0923 18:09:11.591634  2794 net.cpp:137] Memory required for data: 394512800
+I0923 18:09:11.591661  2794 layer_factory.hpp:77] Creating layer ip2_ip2_0_split
+I0923 18:09:11.591691  2794 net.cpp:84] Creating Layer ip2_ip2_0_split
+I0923 18:09:11.591717  2794 net.cpp:406] ip2_ip2_0_split <- ip2
+I0923 18:09:11.591743  2794 net.cpp:380] ip2_ip2_0_split -> ip2_ip2_0_split_0
+I0923 18:09:11.591771  2794 net.cpp:380] ip2_ip2_0_split -> ip2_ip2_0_split_1
+I0923 18:09:11.592063  2794 net.cpp:122] Setting up ip2_ip2_0_split
+I0923 18:09:11.592095  2794 net.cpp:129] Top shape: 40 2 (80)
+I0923 18:09:11.592121  2794 net.cpp:129] Top shape: 40 2 (80)
+I0923 18:09:11.592145  2794 net.cpp:137] Memory required for data: 394513440
+I0923 18:09:11.592170  2794 layer_factory.hpp:77] Creating layer accuracy
+I0923 18:09:11.592200  2794 net.cpp:84] Creating Layer accuracy
+I0923 18:09:11.592226  2794 net.cpp:406] accuracy <- ip2_ip2_0_split_0
+I0923 18:09:11.592252  2794 net.cpp:406] accuracy <- label_data_1_split_0
+I0923 18:09:11.592281  2794 net.cpp:380] accuracy -> accuracy
+I0923 18:09:11.592445  2794 net.cpp:122] Setting up accuracy
+I0923 18:09:11.592475  2794 net.cpp:129] Top shape: (1)
+I0923 18:09:11.592500  2794 net.cpp:137] Memory required for data: 394513444
+I0923 18:09:11.592525  2794 layer_factory.hpp:77] Creating layer loss
+I0923 18:09:11.592552  2794 net.cpp:84] Creating Layer loss
+I0923 18:09:11.592578  2794 net.cpp:406] loss <- ip2_ip2_0_split_1
+I0923 18:09:11.592624  2794 net.cpp:406] loss <- label_data_1_split_1
+I0923 18:09:11.592655  2794 net.cpp:380] loss -> loss
+I0923 18:09:11.592685  2794 layer_factory.hpp:77] Creating layer loss
+I0923 18:09:11.592720  2794 net.cpp:122] Setting up loss
+I0923 18:09:11.592749  2794 net.cpp:129] Top shape: (1)
+I0923 18:09:11.592774  2794 net.cpp:132]     with loss weight 1
+I0923 18:09:11.592933  2794 net.cpp:137] Memory required for data: 394513448
+I0923 18:09:11.592960  2794 net.cpp:198] loss needs backward computation.
+I0923 18:09:11.592986  2794 net.cpp:200] accuracy does not need backward computation.
+I0923 18:09:11.593013  2794 net.cpp:198] ip2_ip2_0_split needs backward computation.
+I0923 18:09:11.593039  2794 net.cpp:198] ip2 needs backward computation.
+I0923 18:09:11.593063  2794 net.cpp:198] relu1 needs backward computation.
+I0923 18:09:11.593088  2794 net.cpp:198] ip1 needs backward computation.
+I0923 18:09:11.593113  2794 net.cpp:198] pool2 needs backward computation.
+I0923 18:09:11.593138  2794 net.cpp:198] conv2 needs backward computation.
+I0923 18:09:11.593164  2794 net.cpp:198] pool1 needs backward computation.
+I0923 18:09:11.593189  2794 net.cpp:198] conv1 needs backward computation.
+I0923 18:09:11.593214  2794 net.cpp:200] label_data_1_split does not need backward computation.
+I0923 18:09:11.593240  2794 net.cpp:200] data does not need backward computation.
+I0923 18:09:11.593264  2794 net.cpp:242] This network produces output accuracy
+I0923 18:09:11.593493  2794 net.cpp:242] This network produces output loss
+I0923 18:09:11.593530  2794 net.cpp:255] Network initialization done.
+I0923 18:09:11.593592  2794 solver.cpp:56] Solver scaffolding done.
+I0923 18:09:11.593638  2794 caffe.cpp:248] Starting Optimization
+I0923 18:09:11.593665  2794 solver.cpp:272] Solving AroRectNet
+I0923 18:09:11.593689  2794 solver.cpp:273] Learning Rate Policy: inv
+I0923 18:09:11.910936  2794 solver.cpp:330] Iteration 0, Testing net (#0)
+I0923 18:12:08.689726  2794 solver.cpp:397]     Test net output #0: accuracy = 0.5265
+I0923 18:12:08.689847  2794 solver.cpp:397]     Test net output #1: loss = 6.0179 (* 1 = 6.0179 loss)
+I0923 18:12:31.256971  2794 solver.cpp:218] Iteration 0 (0 iter/s, 199.599s/50 iters), loss = 7.2648
+I0923 18:12:31.276299  2794 solver.cpp:237]     Train net output #0: loss = 7.2648 (* 1 = 7.2648 loss)
+I0923 18:12:31.576774  2794 sgd_solver.cpp:105] Iteration 0, lr = 1e-06
+I0923 18:27:10.195101  2794 solver.cpp:218] Iteration 50 (0.0568921 iter/s, 878.857s/50 iters), loss = 2.47147
+I0923 18:27:10.213130  2794 solver.cpp:237]     Train net output #0: loss = 2.47147 (* 1 = 2.47147 loss)
+I0923 18:27:10.213169  2794 sgd_solver.cpp:105] Iteration 50, lr = 9.96266e-07
+I0923 18:40:57.470839  2794 solver.cpp:330] Iteration 100, Testing net (#0)
+I0923 18:43:23.024062  2796 data_layer.cpp:73] Restarting data prefetching from start.
+I0923 18:43:35.755532  2794 solver.cpp:397]     Test net output #0: accuracy = 0.879
+I0923 18:43:35.755632  2794 solver.cpp:397]     Test net output #1: loss = 0.805452 (* 1 = 0.805452 loss)
+I0923 18:43:52.144158  2794 solver.cpp:218] Iteration 100 (0.0499036 iter/s, 1001.93s/50 iters), loss = 0.86699
+I0923 18:43:52.144265  2794 solver.cpp:237]     Train net output #0: loss = 0.86699 (* 1 = 0.86699 loss)
+I0923 18:43:52.144300  2794 sgd_solver.cpp:105] Iteration 100, lr = 9.92565e-07
+
+
+gaston@ML-Ubuntu-VB:~/caffe/project/aros_y_rectangulos$ ../../build/project/tool/classification.bin deploy.prototxt train_iter_1000.caffemodel mean.binaryproto labels.txt validate_file.txt 
+---------- Validation for validate_file.txt ----------
+---------- Validation for project/validate/aro0.png ---------- Valid 
+---------- Validation for project/validate/rect0.png ---------- Valid 
+---------- Validation for project/validate/aro1.png ---------- Valid 
+---------- Validation for project/validate/rect1.png ---------- Valid 
+---------- Validation for project/validate/aro2.png ---------- Valid 
+---------- Validation for project/validate/rect2.png ---------- Valid 
+---------- Validation for project/validate/aro3.png ---------- Valid 
+---------- Validation for project/validate/rect3.png ---------- Valid 
+---------- Validation for project/validate/aro4.png ---------- Valid 
+---------- Validation for project/validate/rect4.png ---------- Valid 
+---------- Validation for project/validate/aro5.png ---------- Valid 
+---------- Validation for project/validate/rect5.png ---------- Valid 
+---------- Validation for project/validate/aro6.png ---------- Valid 
+---------- Validation for project/validate/rect6.png ---------- Valid 
+---------- Validation for project/validate/aro7.png ---------- Valid 
+---------- Validation for project/validate/rect7.png ---------- Valid 
+---------- Validation for project/validate/aro8.png ---------- Valid 
+---------- Validation for project/validate/rect8.png ---------- Valid 
+---------- Validation for project/validate/aro9.png ---------- Valid 
+---------- Validation for project/validate/rect9.png ---------- Valid 
+---------- Validation for project/validate/aro10.png ---------- Valid 
+---------- Validation for project/validate/rect10.png ---------- Valid 
+---------- Validation for project/validate/aro11.png ---------- Valid 
+---------- Validation for project/validate/rect11.png ---------- Valid 
+---------- Validation for project/validate/aro12.png ---------- Valid 
+---------- Validation for project/validate/rect12.png ---------- Valid 
+---------- Validation for project/validate/aro13.png ---------- Valid 
+---------- Validation for project/validate/rect13.png ---------- Valid 
+---------- Validation for project/validate/aro14.png ---------- Valid 
+---------- Validation for project/validate/rect14.png ---------- Valid 
+---------- Validation for project/validate/aro15.png ---------- Valid 
+---------- Validation for project/validate/rect15.png ---------- Valid 
+---------- Validation for project/validate/aro16.png ---------- Valid 
+---------- Validation for project/validate/rect16.png ---------- Valid 
+---------- Validation for project/validate/aro17.png ---------- Valid 
+---------- Validation for project/validate/rect17.png ---------- Valid 
+---------- Validation for project/validate/aro18.png ---------- Valid 
+---------- Validation for project/validate/rect18.png ---------- Valid 
+---------- Validation for project/validate/aro19.png ---------- Valid 
+---------- Validation for project/validate/rect19.png ---------- Valid 
+---------- Validation for project/validate/aro20.png ---------- Valid 
+---------- Validation for project/validate/rect20.png ---------- Valid 
+---------- Validation for project/validate/aro21.png ---------- Valid 
+---------- Validation for project/validate/rect21.png ---------- Valid 
+---------- Validation for project/validate/aro22.png ---------- Not Valid
+---------- Validation for project/validate/rect22.png ---------- Valid 
+---------- Validation for project/validate/aro23.png ---------- Valid 
+---------- Validation for project/validate/rect23.png ---------- Valid 
+---------- Validation for project/validate/aro24.png ---------- Valid 
+---------- Validation for project/validate/rect24.png ---------- Valid 
+---------- Validation for project/validate/aro25.png ---------- Valid 
+---------- Validation for project/validate/rect25.png ---------- Valid 
+---------- Validation for project/validate/aro26.png ---------- Valid 
+---------- Validation for project/validate/rect26.png ---------- Valid 
+---------- Validation for project/validate/aro27.png ---------- Valid 
+---------- Validation for project/validate/rect27.png ---------- Valid 
+---------- Validation for project/validate/aro28.png ---------- Valid 
+---------- Validation for project/validate/rect28.png ---------- Valid 
+---------- Validation for project/validate/aro29.png ---------- Valid 
+---------- Validation for project/validate/rect29.png ---------- Valid 
+---------- Validation for project/validate/aro30.png ---------- Valid 
+---------- Validation for project/validate/rect30.png ---------- Valid 
+---------- Validation for project/validate/aro31.png ---------- Valid 
+---------- Validation for project/validate/rect31.png ---------- Valid 
+---------- Validation for project/validate/aro32.png ---------- Valid 
+---------- Validation for project/validate/rect32.png ---------- Valid 
+---------- Validation for project/validate/aro33.png ---------- Valid 
+---------- Validation for project/validate/rect33.png ---------- Valid 
+---------- Validation for project/validate/aro34.png ---------- Valid 
+---------- Validation for project/validate/rect34.png ---------- Valid 
+---------- Validation for project/validate/aro35.png ---------- Valid 
+---------- Validation for project/validate/rect35.png ---------- Valid 
+---------- Validation for project/validate/aro36.png ---------- Valid 
+---------- Validation for project/validate/rect36.png ---------- Valid 
+---------- Validation for project/validate/aro37.png ---------- Valid 
+---------- Validation for project/validate/rect37.png ---------- Valid 
+---------- Validation for project/validate/aro38.png ---------- Valid 
+---------- Validation for project/validate/rect38.png ---------- Valid 
+---------- Validation for project/validate/aro39.png ---------- Valid 
+---------- Validation for project/validate/rect39.png ---------- Valid 
+---------- Validation for project/validate/aro40.png ---------- Valid 
+---------- Validation for project/validate/rect40.png ---------- Valid 
+---------- Validation for project/validate/aro41.png ---------- Valid 
+---------- Validation for project/validate/rect41.png ---------- Valid 
+---------- Validation for project/validate/aro42.png ---------- Valid 
+---------- Validation for project/validate/rect42.png ---------- Valid 
+---------- Validation for project/validate/aro43.png ---------- Valid 
+---------- Validation for project/validate/rect43.png ---------- Valid 
+---------- Validation for project/validate/aro44.png ---------- Valid 
+---------- Validation for project/validate/rect44.png ---------- Valid 
+---------- Validation for project/validate/aro45.png ---------- Valid 
+---------- Validation for project/validate/rect45.png ---------- Valid 
+---------- Validation for project/validate/aro46.png ---------- Valid 
+---------- Validation for project/validate/rect46.png ---------- Valid 
+---------- Validation for project/validate/aro47.png ---------- Valid 
+---------- Validation for project/validate/rect47.png ---------- Valid 
+---------- Validation for project/validate/aro48.png ---------- Valid 
+---------- Validation for project/validate/rect48.png ---------- Valid 
+---------- Validation for project/validate/aro49.png ---------- Valid 
+---------- Validation for project/validate/rect49.png ---------- Valid 
+---------- Validation for project/validate/aro50.png ---------- Valid 
+---------- Validation for project/validate/rect50.png ---------- Valid 
+---------- Validation for project/validate/aro51.png ---------- Valid 
+---------- Validation for project/validate/rect51.png ---------- Valid 
+---------- Validation for project/validate/aro52.png ---------- Valid 
+---------- Validation for project/validate/rect52.png ---------- Valid 
+---------- Validation for project/validate/aro53.png ---------- Valid 
+---------- Validation for project/validate/rect53.png ---------- Valid 
+---------- Validation for project/validate/aro54.png ---------- Valid 
+---------- Validation for project/validate/rect54.png ---------- Valid 
+---------- Validation for project/validate/aro55.png ---------- Valid 
+---------- Validation for project/validate/rect55.png ---------- Valid 
+---------- Validation for project/validate/aro56.png ---------- Valid 
+---------- Validation for project/validate/rect56.png ---------- Valid 
+---------- Validation for project/validate/aro57.png ---------- Valid 
+---------- Validation for project/validate/rect57.png ---------- Valid 
+---------- Validation for project/validate/aro58.png ---------- Valid 
+---------- Validation for project/validate/rect58.png ---------- Valid 
+---------- Validation for project/validate/aro59.png ---------- Valid 
+---------- Validation for project/validate/rect59.png ---------- Valid 
+---------- Validation for project/validate/aro60.png ---------- Not Valid
+---------- Validation for project/validate/rect60.png ---------- Valid 
+---------- Validation for project/validate/aro61.png ---------- Valid 
+---------- Validation for project/validate/rect61.png ---------- Valid 
+---------- Validation for project/validate/aro62.png ---------- Valid 
+---------- Validation for project/validate/rect62.png ---------- Valid 
+---------- Validation for project/validate/aro63.png ---------- Valid 
+---------- Validation for project/validate/rect63.png ---------- Valid 
+---------- Validation for project/validate/aro64.png ---------- Valid 
+---------- Validation for project/validate/rect64.png ---------- Valid 
+---------- Validation for project/validate/aro65.png ---------- Valid 
+---------- Validation for project/validate/rect65.png ---------- Valid 
+---------- Validation for project/validate/aro66.png ---------- Valid 
+---------- Validation for project/validate/rect66.png ---------- Valid 
+---------- Validation for project/validate/aro67.png ---------- Valid 
+---------- Validation for project/validate/rect67.png ---------- Valid 
+---------- Validation for project/validate/aro68.png ---------- Valid 
+---------- Validation for project/validate/rect68.png ---------- Valid 
+---------- Validation for project/validate/aro69.png ---------- Valid 
+---------- Validation for project/validate/rect69.png ---------- Valid 
+---------- Validation for project/validate/aro70.png ---------- Valid 
+---------- Validation for project/validate/rect70.png ---------- Valid 
+---------- Validation for project/validate/aro71.png ---------- Valid 
+---------- Validation for project/validate/rect71.png ---------- Valid 
+---------- Validation for project/validate/aro72.png ---------- Valid 
+---------- Validation for project/validate/rect72.png ---------- Valid 
+---------- Validation for project/validate/aro73.png ---------- Valid 
+---------- Validation for project/validate/rect73.png ---------- Valid 
+---------- Validation for project/validate/aro74.png ---------- Valid 
+---------- Validation for project/validate/rect74.png ---------- Valid 
+---------- Validation for project/validate/aro75.png ---------- Valid 
+---------- Validation for project/validate/rect75.png ---------- Valid 
+---------- Validation for project/validate/aro76.png ---------- Valid 
+---------- Validation for project/validate/rect76.png ---------- Valid 
+---------- Validation for project/validate/aro77.png ---------- Valid 
+---------- Validation for project/validate/rect77.png ---------- Valid 
+---------- Validation for project/validate/aro78.png ---------- Valid 
+---------- Validation for project/validate/rect78.png ---------- Valid 
+---------- Validation for project/validate/aro79.png ---------- Valid 
+---------- Validation for project/validate/rect79.png ---------- Valid 
+---------- Validation for project/validate/aro80.png ---------- Valid 
+---------- Validation for project/validate/rect80.png ---------- Valid 
+---------- Validation for project/validate/aro81.png ---------- Valid 
+---------- Validation for project/validate/rect81.png ---------- Valid 
+---------- Validation for project/validate/aro82.png ---------- Valid 
+---------- Validation for project/validate/rect82.png ---------- Not Valid
+---------- Validation for project/validate/aro83.png ---------- Valid 
+---------- Validation for project/validate/rect83.png ---------- Valid 
+---------- Validation for project/validate/aro84.png ---------- Valid 
+---------- Validation for project/validate/rect84.png ---------- Valid 
+---------- Validation for project/validate/aro85.png ---------- Valid 
+---------- Validation for project/validate/rect85.png ---------- Valid 
+---------- Validation for project/validate/aro86.png ---------- Valid 
+---------- Validation for project/validate/rect86.png ---------- Valid 
+---------- Validation for project/validate/aro87.png ---------- Valid 
+---------- Validation for project/validate/rect87.png ---------- Valid 
+---------- Validation for project/validate/aro88.png ---------- Valid 
+---------- Validation for project/validate/rect88.png ---------- Valid 
+---------- Validation for project/validate/aro89.png ---------- Valid 
+---------- Validation for project/validate/rect89.png ---------- Valid 
+---------- Validation for project/validate/aro90.png ---------- Valid 
+---------- Validation for project/validate/rect90.png ---------- Valid 
+---------- Validation for project/validate/aro91.png ---------- Valid 
+---------- Validation for project/validate/rect91.png ---------- Valid 
+---------- Validation for project/validate/aro92.png ---------- Valid 
+---------- Validation for project/validate/rect92.png ---------- Valid 
+---------- Validation for project/validate/aro93.png ---------- Valid 
+---------- Validation for project/validate/rect93.png ---------- Valid 
+---------- Validation for project/validate/aro94.png ---------- Valid 
+---------- Validation for project/validate/rect94.png ---------- Valid 
+---------- Validation for project/validate/aro95.png ---------- Valid 
+---------- Validation for project/validate/rect95.png ---------- Valid 
+---------- Validation for project/validate/aro96.png ---------- Valid 
+---------- Validation for project/validate/rect96.png ---------- Valid 
+---------- Validation for project/validate/aro97.png ---------- Valid 
+---------- Validation for project/validate/rect97.png ---------- Valid 
+---------- Validation for project/validate/aro98.png ---------- Valid 
+---------- Validation for project/validate/rect98.png ---------- Valid 
+---------- Validation for project/validate/aro99.png ---------- Valid 
+---------- Validation for project/validate/rect99.png ---------- Valid 
+---------- Total:  200 ---------- Valids:  197---------- Acuracy: 98.50
+---------- Elapsed total time:  28.5982 segundos 
+---------- Average clasification time: 142.9900 milisegundos 
+
+

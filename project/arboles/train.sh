@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 set -e
 
-../../build/tools/caffe train --solver=solver.prototxt $@
+../../build/project/herramientas/entrenador.bin train --solver=solver.prototxt $@
