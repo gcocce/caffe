@@ -226,19 +226,19 @@ int time() {
   const vector<shared_ptr<Layer<float> > >& layers = caffe_net.layers();
   const vector<vector<Blob<float>*> >& bottom_vecs = caffe_net.bottom_vecs();
   const vector<vector<Blob<float>*> >& top_vecs = caffe_net.top_vecs();
-  const vector<vector<bool> >& bottom_need_backward = caffe_net.bottom_need_backward();
+  //const vector<vector<bool> >& bottom_need_backward = caffe_net.bottom_need_backward();
   LOG(INFO) << "*** Inicio Benchmarking ***";
   LOG(INFO) << "En cada iteracion se ejecuta Forward y Backward";
   LOG(INFO) << "Probando " << FLAGS_iterations << " iteraciones.";
   Timer total_timer;
   total_timer.Start();
   Timer forward_timer;
-  Timer backward_timer;
+  //Timer backward_timer;
   Timer timer;
   std::vector<double> forward_time_per_layer(layers.size(), 0.0);
-  std::vector<double> backward_time_per_layer(layers.size(), 0.0);
+  //std::vector<double> backward_time_per_layer(layers.size(), 0.0);
   double forward_time = 0.0;
-  double backward_time = 0.0;
+  //double backward_time = 0.0;
   for (int j = 0; j < FLAGS_iterations; ++j) {
     Timer iter_timer;
     iter_timer.Start();
@@ -250,6 +250,7 @@ int time() {
     }
     forward_time += forward_timer.MicroSeconds();
     
+    /*
     backward_timer.Start();
     for (int i = layers.size() - 1; i >= 0; --i) {
       timer.Start();
@@ -258,6 +259,7 @@ int time() {
       backward_time_per_layer[i] += timer.MicroSeconds();
     }
     backward_time += backward_timer.MicroSeconds();
+    */
     LOG(INFO) << "Iteration: " << j + 1 << " forward-backward time: "
       << iter_timer.MilliSeconds() << " ms.";
     }
