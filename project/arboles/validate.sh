@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 set -e
 
-if [ "$#" -eq 1 ];then
-../../build/project/herramientas/clasificador.bin deploy.prototxt $1 mean.binaryproto labels.txt validate_file.txt
+if [ "$#" -eq 2 ];then
+../../build/project/herramientas/clasificador.bin deploy.prototxt $1 mean.binaryproto labels.txt $2
 else
 	echo "Uso del script:"
-	echo "./script archivo.caffemodel"
+	echo "./script archivo.caffemodel [imagen o archivo con listado]"
 fi
 
 
