@@ -104,10 +104,11 @@ It will classify the image and output a result, in case of a list it will provid
 * For results both in Raspberry and Orange pi you can check the [Resume](http://laboratorios.fi.uba.ar/lse/tesis/LSE-FIUBA-Trabajo-Final-CESE-Julio-Gaston-Cocce-2017.pdf)
 
 Here a comparison between AlexNet model with the model used for images created inside arboles/ directory:
-| Model | Images | Categories | Parameters | Orange Pi | Raspberry |
-| ------------- |:-------------:| -----:| -----: | -----: | -----:|
-| AlexNet     | 256x256 Color | 1000 | 238 Mbytes | 732 ms | 549 ms |
-| Arboles     | 300x300 BW    | 2 | 2 Mbytes | 221 ms | 166 ms|
+
+Model | Images | Categories | Parameters | Orange Pi | Raspberry
+------------- |:-------------:| -----:| -----: | -----: | -----:
+AlexNet     | 256x256 Color | 1000 | 238 Mbytes | 732 ms | 549 ms
+Arboles     | 300x300 BW    | 2 | 2 Mbytes | 221 ms | 166 ms
 
 
 ## License and Citation
